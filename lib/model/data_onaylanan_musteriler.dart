@@ -4,12 +4,12 @@
 
 import 'dart:convert';
 
-DataModelMusteriOnaylanan dataMusteriOnaylananFromJson(String str) => DataModelMusteriOnaylanan.fromJson(json.decode(str));
+DataModelOnaylananMusteriler dataMusteriOnaylananFromJson(String str) => DataModelOnaylananMusteriler.fromJson(json.decode(str));
 
-String dataMusteriOnaylananToJson(DataModelMusteriOnaylanan data) => json.encode(data.toJson());
+String dataMusteriOnaylananToJson(DataModelOnaylananMusteriler data) => json.encode(data.toJson());
 
-class DataModelMusteriOnaylanan {
-  DataModelMusteriOnaylanan({
+class DataModelOnaylananMusteriler {
+  DataModelOnaylananMusteriler({
     this.draw,
     this.recordsTotal,
     this.recordsFiltered,
@@ -23,7 +23,7 @@ class DataModelMusteriOnaylanan {
   List<Datum> data;
   List<dynamic> input;
 
-  factory DataModelMusteriOnaylanan.fromJson(Map<String, dynamic> json) => DataModelMusteriOnaylanan(
+  factory DataModelOnaylananMusteriler.fromJson(Map<String, dynamic> json) => DataModelOnaylananMusteriler(
     draw: json["draw"],
     recordsTotal: json["recordsTotal"],
     recordsFiltered: json["recordsFiltered"],

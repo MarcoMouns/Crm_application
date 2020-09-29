@@ -11,7 +11,7 @@ class OnaylananMusteri extends StatefulWidget {
 
 class _OnaylananMusteriState extends State<OnaylananMusteri> {
   final ServiceOnaylananMusteriler apiManager = ServiceOnaylananMusteriler();
-  Future<DataModelMusteriOnaylanan> _future;
+  Future<DataModelOnaylananMusteriler> _future;
 
   @override
   void initState() {
@@ -32,9 +32,9 @@ class _OnaylananMusteriState extends State<OnaylananMusteri> {
   }
 
   _futureMusteri(BuildContext context) {
-    return FutureBuilder<DataModelMusteriOnaylanan>(
+    return FutureBuilder<DataModelOnaylananMusteriler>(
         future: _future,
-        builder: (context, AsyncSnapshot<DataModelMusteriOnaylanan> snapshot) {
+        builder: (context, AsyncSnapshot<DataModelOnaylananMusteriler> snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
                 itemCount: snapshot.data.data.length,

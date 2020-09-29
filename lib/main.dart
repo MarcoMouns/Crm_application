@@ -1,4 +1,6 @@
 import 'package:Crm_application/sayfalar/devameden_projetipi.dart';
+import 'package:Crm_application/sayfalar/gorusmeler.dart';
+import 'package:Crm_application/sayfalar/hosting_sureleri.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -85,7 +87,24 @@ class _HomeState extends State<Home> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => DevamedenProjetipi()));
+                                    builder: (context) =>
+                                        DevamedenProjetipi()));
+                          }
+                          break;
+                        case 4:
+                          {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Gorusmeler()));
+                          }
+                          break;
+                        case 5:
+                          {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HostingSureleri()));
                           }
                           break;
                         default:
@@ -113,11 +132,9 @@ const List<Islemler> _islemler = const <Islemler>[
   const Islemler(title: 'Sektörler', icon: Icons.eight_k_plus),
   const Islemler(title: 'Onaylanan Müşteriler', icon: Icons.person),
   const Islemler(title: 'Devam Eden Projeler', icon: Icons.add_to_queue),
-
-
   const Islemler(title: 'Görüşmeler', icon: Icons.bubble_chart_outlined),
-  const Islemler(title: 'Hostingler', icon: Icons.account_balance_wallet_sharp),
   const Islemler(title: 'Hosting', icon: Icons.account_balance_wallet),
+  const Islemler(title: 'Hostingler', icon: Icons.account_balance_wallet_sharp),
   const Islemler(title: 'Onaylanan Projeler', icon: Icons.analytics_rounded),
   const Islemler(title: 'Onaylanmayan Projeler', icon: Icons.access_time),
   const Islemler(title: 'Tamamlanan', icon: Icons.add_circle),

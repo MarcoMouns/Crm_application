@@ -10,8 +10,8 @@ class DevamedenProjetipi extends StatefulWidget {
 }
 
 class _DevamedenProjetipiState extends State<DevamedenProjetipi> {
-  Future<DataModelDevamedenProjeTipi> _future;
-  final ServiceDevamEdenProjeTipi apiManager = ServiceDevamEdenProjeTipi();
+  Future<DataModelDevamEdenProjeTipi> _future;
+  ServiceDevamEdenProjeTipi apiManager = ServiceDevamEdenProjeTipi();
 
   @override
   void initState() {
@@ -31,10 +31,10 @@ class _DevamedenProjetipiState extends State<DevamedenProjetipi> {
   }
 
   _futureDevamedenProjeTipi(BuildContext context) {
-    return FutureBuilder<DataModelDevamedenProjeTipi>(
+    return FutureBuilder<DataModelDevamEdenProjeTipi>(
         future: _future,
         builder:
-            (context, AsyncSnapshot<DataModelDevamedenProjeTipi> snapshot) {
+            (context, AsyncSnapshot<DataModelDevamEdenProjeTipi> snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
                 itemCount: snapshot.data.data.length,
@@ -47,7 +47,7 @@ class _DevamedenProjetipiState extends State<DevamedenProjetipi> {
                     child: Card(
                       child: ListTile(
                         title: Text(_data.projeAdi),
-                        subtitle: Text(_data.projeSorumlusu.index.toString()),
+                        subtitle: Text(_data.projeSorumlusu.toString()),
                       ),
                     ),
                   );
