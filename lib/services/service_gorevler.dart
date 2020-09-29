@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 import '../model/data_gorevler.dart';
 import '../constants/api_constants.dart';
 
-class Service {
-  Future<DataModel> fetchData() async {
+class ServiceGorevler {
+  Future<DataModelGorevler> fetchData() async {
 
     /// burada [await] ile [http.get] nesnesinin çalışmasını bekleyip
     /// [response] değişkenine attık
@@ -31,11 +31,11 @@ class Service {
 
       /// Yukarıdaki metodu kullanmak istemezsen aşağıdakini kullanabilirsin
       /// Bunu kullanırsan ilk satıra import 'dart:convert'; yapmayı unutma
-      final _jsonResponse = DataModel.fromJson(jsonDecode(response.body));
+      final _jsonResponse = DataModelGorevler.fromJson(jsonDecode(response.body));
       return _jsonResponse;
     } else {
       throw Exception(
-        "Request failed with status: ${response.statusCode}",
+        "İstek durumu başarısız oldu: ${response.statusCode}",
       );
     }
   }

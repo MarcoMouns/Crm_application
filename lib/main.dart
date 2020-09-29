@@ -1,14 +1,11 @@
-
+import 'package:Crm_application/sayfalar/devameden_projetipi.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'login_sayfa.dart';
 import 'sayfalar/gorevler.dart';
+import 'sayfalar/onaylanan_musteriler.dart';
 import 'sayfalar/sektorler.dart';
-
-
-
-
 
 void main() {
   runApp(MyApp());
@@ -64,25 +61,35 @@ class _HomeState extends State<Home> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => Gorevler()));
-
-
                           }
                           break;
                         case 1:
                           {
-
                             //sayfa rotası
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => Sektorler()));
-
+                          }
+                          break;
+                        case 2:
+                          {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => OnaylananMusteri()));
+                          }
+                          break;
+                        case 3:
+                          {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DevamedenProjetipi()));
                           }
                           break;
                         default:
-                          {
-                            //statements;
-                          }
+                          {}
                           break;
                       }
                     });
@@ -104,13 +111,15 @@ class Islemler {
 const List<Islemler> _islemler = const <Islemler>[
   const Islemler(title: 'Görevler', icon: Icons.add_circle_outline_outlined),
   const Islemler(title: 'Sektörler', icon: Icons.eight_k_plus),
-  const Islemler(title: 'Müşteriler', icon: Icons.person),
+  const Islemler(title: 'Onaylanan Müşteriler', icon: Icons.person),
+  const Islemler(title: 'Devam Eden Projeler', icon: Icons.add_to_queue),
+
+
   const Islemler(title: 'Görüşmeler', icon: Icons.bubble_chart_outlined),
   const Islemler(title: 'Hostingler', icon: Icons.account_balance_wallet_sharp),
   const Islemler(title: 'Hosting', icon: Icons.account_balance_wallet),
   const Islemler(title: 'Onaylanan Projeler', icon: Icons.analytics_rounded),
   const Islemler(title: 'Onaylanmayan Projeler', icon: Icons.access_time),
-  const Islemler(title: 'Devam Eden Projeler', icon: Icons.add_to_queue),
   const Islemler(title: 'Tamamlanan', icon: Icons.add_circle),
   const Islemler(title: 'Proje Bazlı Görevler', icon: Icons.add),
   const Islemler(title: 'Proje Bazlı Demo Linkleri', icon: Icons.add_link),

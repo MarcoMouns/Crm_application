@@ -1,18 +1,18 @@
-class DataModel {
+class DataModelGorevler {
   int draw;
   int recordsTotal;
   int recordsFiltered;
   List<Data> data;
   List<String> input;
 
-  DataModel(
+  DataModelGorevler(
       {this.draw,
       this.recordsTotal,
       this.recordsFiltered,
       this.data,
       this.input});
 
-  DataModel.fromJson(Map<String, dynamic> json) {
+  DataModelGorevler.fromJson(Map<String, dynamic> json) {
     draw = json['draw'];
     recordsTotal = json['recordsTotal'];
     recordsFiltered = json['recordsFiltered'];

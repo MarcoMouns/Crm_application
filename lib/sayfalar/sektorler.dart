@@ -1,9 +1,6 @@
-import 'dart:convert';
-
 import 'package:Crm_application/model/data_sektorler.dart';
 import 'package:Crm_application/services/service_sektorler.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class Sektorler extends StatefulWidget {
   @override
@@ -26,15 +23,23 @@ class _SektorlerState extends State<Sektorler> {
         appBar: AppBar(
           title: Text("Sektorler"),
         ),
-        body: FutureBuilder(
+        body:
+
+
+        FutureBuilder(
           future: futureSektorler,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(
+
                   itemCount: snapshot.data.length,
                   itemBuilder: (context, index) {
-                    return ListTile(
-                      title: Text(snapshot.data[index].name),
+                    return Card(
+                      child: ListTile(
+                        title: Text(snapshot.data[index].name),
+                        subtitle:Text( snapshot.data[index].id),
+
+                      ),
                     );
                   });
             } else {

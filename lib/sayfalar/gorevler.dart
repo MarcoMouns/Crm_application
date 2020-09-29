@@ -8,42 +8,37 @@ class Gorevler extends StatefulWidget {
 }
 
 class _GoverlerState extends State<Gorevler> {
-  final Service apiManager = Service();
-  Future<DataModel> _future;
+  final ServiceGorevler apiManager = ServiceGorevler();
+  Future<DataModelGorevler> _future;
 
   @override
   void initState() {
     _future = apiManager.fetchData();
-    print("1");
-    super.initState();
-    setState(() {
-      print("dfgsdfg");
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyanAccent,
+      backgroundColor: Colors.tealAccent,
       appBar: AppBar(
         backgroundColor: Colors.cyan,
         title: Text("Görevler"),
       ),
-      body: _buildFutureBuilder(context),
+      body: _futureGorevler(context),
     );
   }
 
-  _buildFutureBuilder(BuildContext context) {
-    return FutureBuilder<DataModel>(
+  _futureGorevler(BuildContext context) {
+    return FutureBuilder<DataModelGorevler>(
       future: _future,
-      builder: (BuildContext context, AsyncSnapshot<DataModel> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot<DataModelGorevler> snapshot) {
         /// Gets adlı modelin içindeki data ile snapshot içindeki data karışmasın
         /// diye [_data] isimli değişken oluşturduk.
 
         if (snapshot.hasData) {
           return GestureDetector(
             onTap: () {
-              print("sdfasfasfasf");
+
             },
             child: ListView.builder(
               scrollDirection: Axis.vertical,
@@ -67,7 +62,6 @@ class _GoverlerState extends State<Gorevler> {
                     ),
                   ),
                 );
-                print("4");
               },
             ),
           );
