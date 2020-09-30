@@ -1,6 +1,14 @@
 import 'package:Crm_application/sayfalar/devameden_projetipi.dart';
 import 'package:Crm_application/sayfalar/gorusmeler.dart';
 import 'package:Crm_application/sayfalar/hosting_sureleri.dart';
+import 'package:Crm_application/sayfalar/hostinler.dart';
+import 'package:Crm_application/sayfalar/onaylanan_projeler.dart';
+import 'package:Crm_application/sayfalar/onaylanmayan_musteriler.dart.dart';
+import 'package:Crm_application/sayfalar/onaylanmayan_projeler.dart';
+import 'package:Crm_application/sayfalar/projebazli_demo.dart';
+import 'package:Crm_application/sayfalar/projebazli_gorevler.dart';
+import 'package:Crm_application/sayfalar/sektorbazli_demo.dart';
+import 'package:Crm_application/sayfalar/tamamlanan_projetipi.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -79,7 +87,7 @@ class _HomeState extends State<Home> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => OnaylananMusteri()));
+                                    builder: (context) => DevamedenProjetipi()));
                           }
                           break;
                         case 3:
@@ -88,7 +96,7 @@ class _HomeState extends State<Home> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        DevamedenProjetipi()));
+                                        TamamlananProjeTipi()));
                           }
                           break;
                         case 4:
@@ -96,7 +104,7 @@ class _HomeState extends State<Home> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Gorusmeler()));
+                                    builder: (context) => OnaylananMusteri()));
                           }
                           break;
                         case 5:
@@ -104,9 +112,74 @@ class _HomeState extends State<Home> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => HostingSureleri()));
+                                    builder: (context) => OnaylanmayanMusteriler  ()));
                           }
                           break;
+                        case 6:
+                          {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => OnaylananProjeler   ()));
+                          }
+                          break;
+                        case 7:
+                          {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>OnaylanmayanProjeler   ()));
+                          }
+                          break;
+                        case 8:
+                          {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Gorusmeler   ()));
+                          }
+                          break;
+                        case 9:
+                          {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>HostingSureleri   ()));
+                          }
+                          break;
+                        case 10:
+                          {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Hostingler()));
+                          }
+                          break;
+                        case 11:
+                          {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ProjeBazliGorevler()));
+                          }
+                          break;
+                        case 12:
+                          {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ProjeBazliDemo()));
+                          }
+                          break;
+                        case 13:
+                          {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SektorBazliDemo()));
+                          }
+                          break;
+
                         default:
                           {}
                           break;
@@ -130,14 +203,23 @@ class Islemler {
 const List<Islemler> _islemler = const <Islemler>[
   const Islemler(title: 'Görevler', icon: Icons.add_circle_outline_outlined),
   const Islemler(title: 'Sektörler', icon: Icons.eight_k_plus),
-  const Islemler(title: 'Onaylanan Müşteriler', icon: Icons.person),
+
   const Islemler(title: 'Devam Eden Projeler', icon: Icons.add_to_queue),
-  const Islemler(title: 'Görüşmeler', icon: Icons.bubble_chart_outlined),
-  const Islemler(title: 'Hosting', icon: Icons.account_balance_wallet),
-  const Islemler(title: 'Hostingler', icon: Icons.account_balance_wallet_sharp),
+  const Islemler(title: 'Tamamlanan Projeler', icon: Icons.add_circle),
+
+  const Islemler(title: 'Onaylanan Müşteriler', icon: Icons.person),
+  const Islemler(title: 'Onaylanmayan Müşteriler', icon: Icons.person),
+
   const Islemler(title: 'Onaylanan Projeler', icon: Icons.analytics_rounded),
   const Islemler(title: 'Onaylanmayan Projeler', icon: Icons.access_time),
-  const Islemler(title: 'Tamamlanan', icon: Icons.add_circle),
+
+  const Islemler(title: 'Görüşmeler', icon: Icons.bubble_chart_outlined),
+
+  const Islemler(title: 'Hosting', icon: Icons.account_balance_wallet),
+  const Islemler(title: 'Hostingler', icon: Icons.account_balance_wallet_sharp),
+
+
+
   const Islemler(title: 'Proje Bazlı Görevler', icon: Icons.add),
   const Islemler(title: 'Proje Bazlı Demo Linkleri', icon: Icons.add_link),
   const Islemler(title: 'Sektör Bazlı Demo Linkleri', icon: Icons.add_link),

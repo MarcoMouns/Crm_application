@@ -20,7 +20,7 @@ class ApiConstants {
   static const String DEVAMEDEN_PROJETIPI =
       "http://crm.essentebilisim.com/api/projelertype/1/1";
   static const String TAMAMLANAN_PROJETIPI =
-      "http://crm.essentebilisim.com/api/projelertype/1/2";
+      "http://crm.essentebilisim.com/api/projelertype/2/1";
   static const String PROJEBAZLIGOREVLER =
       "http://crm.essentebilisim.com/api/gorevlerbyprojeid/100";
   static const String PROJEBAZLIDEMO =

@@ -41,6 +41,7 @@ class DataModelHostingler {
 }
 
 class Datum {
+  ///constactor
   Datum({
     this.id,
     this.domainAdi,

@@ -10,10 +10,14 @@ class ServiceHostingler {
       Uri.encodeFull(ApiConstants.HOSTINGLER),
       headers: {"Authorization": "Bearer ${ApiConstants.TOKEN_VALUE}"},
     );
+    ///
     if (response.statusCode == 200) {
       final _jsonResponse =
           DataModelHostingler.fromJson(jsonDecode(response.body));
       return _jsonResponse;
+    }
+    else{
+      throw Exception("istek durumu başarısız${response.statusCode}");
     }
   }
 }

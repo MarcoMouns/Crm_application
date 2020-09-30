@@ -29,9 +29,11 @@ class _GoverlerState extends State<Gorevler> {
   }
 
   _futureGorevler(BuildContext context) {
+    ///ne zaman biteceği belli olmayan yapılarda arayüzü yapıp sonrasında veri gelince bu arayüzü kullanmak için futurebuilder kullanıyoruz
     return FutureBuilder<DataModelGorevler>(
       future: _future,
       builder: (BuildContext context, AsyncSnapshot<DataModelGorevler> snapshot) {
+        ///snapshot = o an gelen değer
         /// Gets adlı modelin içindeki data ile snapshot içindeki data karışmasın
         /// diye [_data] isimli değişken oluşturduk.
 

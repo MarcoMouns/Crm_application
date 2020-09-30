@@ -19,25 +19,27 @@ class DataModelOnaylananProjeler {
   List<Datum> data;
   List<dynamic> input;
 
-  factory DataModelOnaylananProjeler.fromRawJson(String str) => DataModelOnaylananProjeler.fromJson(json.decode(str));
+  factory DataModelOnaylananProjeler.fromRawJson(String str) =>
+      DataModelOnaylananProjeler.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
-  factory DataModelOnaylananProjeler.fromJson(Map<String, dynamic> json) => DataModelOnaylananProjeler(
-    draw: json["draw"],
-    recordsTotal: json["recordsTotal"],
-    recordsFiltered: json["recordsFiltered"],
-    data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
-    input: List<dynamic>.from(json["input"].map((x) => x)),
-  );
+  factory DataModelOnaylananProjeler.fromJson(Map<String, dynamic> json) =>
+      DataModelOnaylananProjeler(
+        draw: json["draw"],
+        recordsTotal: json["recordsTotal"],
+        recordsFiltered: json["recordsFiltered"],
+        data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
+        input: List<dynamic>.from(json["input"].map((x) => x)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "draw": draw,
-    "recordsTotal": recordsTotal,
-    "recordsFiltered": recordsFiltered,
-    "data": List<dynamic>.from(data.map((x) => x.toJson())),
-    "input": List<dynamic>.from(input.map((x) => x)),
-  };
+        "draw": draw,
+        "recordsTotal": recordsTotal,
+        "recordsFiltered": recordsFiltered,
+        "data": List<dynamic>.from(data.map((x) => x.toJson())),
+        "input": List<dynamic>.from(input.map((x) => x)),
+      };
 }
 
 class Datum {
@@ -66,29 +68,37 @@ class Datum {
   String toRawJson() => json.encode(toJson());
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
-    id: json["id"],
-    projeAdi: json["ProjeAdi"],
-    projeSorumlusu: projeSorumlusuValues.map[json["ProjeSorumlusu"]],
-    baslangicTarihi: json["BaslangicTarihi"],
-    status: json["Status"] == null ? null : json["Status"],
-    durum: json["Durum"],
-    confirm: json["confirm"],
-    trash: json["trash"],
-  );
+        id: json["id"],
+        projeAdi: json["ProjeAdi"],
+        projeSorumlusu: projeSorumlusuValues.map[json["ProjeSorumlusu"]],
+        baslangicTarihi: json["BaslangicTarihi"],
+        status: json["Status"] == null ? null : json["Status"],
+        durum: json["Durum"],
+        confirm: json["confirm"],
+        trash: json["trash"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "ProjeAdi": projeAdi,
-    "ProjeSorumlusu": projeSorumlusuValues.reverse[projeSorumlusu],
-    "BaslangicTarihi": baslangicTarihi,
-    "Status": status == null ? null : status,
-    "Durum": durum,
-    "confirm": confirm,
-    "trash": trash,
-  };
+        "id": id,
+        "ProjeAdi": projeAdi,
+        "ProjeSorumlusu": projeSorumlusuValues.reverse[projeSorumlusu],
+        "BaslangicTarihi": baslangicTarihi,
+        "Status": status == null ? null : status,
+        "Durum": durum,
+        "confirm": confirm,
+        "trash": trash,
+      };
 }
 
-enum ProjeSorumlusu { IREM_ERDOAN, BURAK_EMUCE, ILKER_TIRYAKIOLU, BURAK_NASR, UFUK_EN, EMPTY, KULLANC }
+enum ProjeSorumlusu {
+  IREM_ERDOAN,
+  BURAK_EMUCE,
+  ILKER_TIRYAKIOLU,
+  BURAK_NASR,
+  UFUK_EN,
+  EMPTY,
+  KULLANC
+}
 
 final projeSorumlusuValues = EnumValues({
   "Burak Emuce": ProjeSorumlusu.BURAK_EMUCE,

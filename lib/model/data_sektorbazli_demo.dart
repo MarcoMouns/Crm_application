@@ -4,8 +4,8 @@
 
 import 'dart:convert';
 
-class DataModelSektorBazliDemoLinkerl {
-  DataModelSektorBazliDemoLinkerl({
+class DataModelSektorBazliDemoLinkleri {
+  DataModelSektorBazliDemoLinkleri({
     this.draw,
     this.recordsTotal,
     this.recordsFiltered,
@@ -19,11 +19,11 @@ class DataModelSektorBazliDemoLinkerl {
   List<Datum> data;
   List<dynamic> input;
 
-  factory DataModelSektorBazliDemoLinkerl.fromRawJson(String str) => DataModelSektorBazliDemoLinkerl.fromJson(json.decode(str));
+  factory DataModelSektorBazliDemoLinkleri.fromRawJson(String str) => DataModelSektorBazliDemoLinkleri.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
-  factory DataModelSektorBazliDemoLinkerl.fromJson(Map<String, dynamic> json) => DataModelSektorBazliDemoLinkerl(
+  factory DataModelSektorBazliDemoLinkleri.fromJson(Map<String, dynamic> json) => DataModelSektorBazliDemoLinkleri(
     draw: json["draw"],
     recordsTotal: json["recordsTotal"],
     recordsFiltered: json["recordsFiltered"],
