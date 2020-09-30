@@ -13,7 +13,7 @@ class ServiceDevamEdenProjeTipi {
     if (response.statusCode == 200) {
       //return dataModelDevamedenProjeTipiFromJson(response.body);
       final _jsonResponse =
-      DataModelDevamEdenProjeTipi.fromJson(jsonDecode(response.body));
+          DataModelDevamEdenProjeTipi.fromJson(jsonDecode(response.body));
       return _jsonResponse;
     } else {
       throw Exception("istek durumu başarısız oldu${response.statusCode}");

@@ -1,4 +1,3 @@
-
 import 'package:Crm_application/model/data_sektorbazli_demo.dart';
 import 'package:Crm_application/services/service_sektorbazli_demo.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +24,7 @@ class _SektorBazliDemoState extends State<SektorBazliDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.lightBlueAccent,
         title: Text("Sektöre Bazlı Demo"),
       ),
       body: _futureSektorBazliDemo(context),
@@ -34,7 +34,8 @@ class _SektorBazliDemoState extends State<SektorBazliDemo> {
   _futureSektorBazliDemo(BuildContext context) {
     return FutureBuilder<DataModelSektorBazliDemoLinkleri>(
         future: _future,
-        builder: (context, AsyncSnapshot<DataModelSektorBazliDemoLinkleri> snapshot) {
+        builder: (context,
+            AsyncSnapshot<DataModelSektorBazliDemoLinkleri> snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
                 itemCount: snapshot.data.data.length,

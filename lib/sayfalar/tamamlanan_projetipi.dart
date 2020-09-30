@@ -1,4 +1,3 @@
-
 import 'package:Crm_application/model/data_tamamlanan_projetipi.dart';
 import 'package:Crm_application/services/service_tamamlanan_projetipi.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +23,7 @@ class _TamamlananProjeTipiState extends State<TamamlananProjeTipi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         title: Text("Tamamlanan Projeler"),
       ),
@@ -34,7 +34,8 @@ class _TamamlananProjeTipiState extends State<TamamlananProjeTipi> {
   _futureTamamlananProjeTipi(BuildContext context) {
     return FutureBuilder<DataModelTamamlananProjeTipi>(
         future: _future,
-        builder: (context, AsyncSnapshot<DataModelTamamlananProjeTipi> snapshot) {
+        builder:
+            (context, AsyncSnapshot<DataModelTamamlananProjeTipi> snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
                 itemCount: snapshot.data.data.length,

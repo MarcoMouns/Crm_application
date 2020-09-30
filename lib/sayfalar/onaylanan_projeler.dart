@@ -1,4 +1,3 @@
-
 import 'package:Crm_application/model/data_onaylanan_projeler.dart';
 
 import 'package:Crm_application/services/service_onaylanan_projeler.dart';
@@ -25,7 +24,7 @@ class _OnaylananProjelerState extends State<OnaylananProjeler> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.tealAccent,
+      backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         title: Text("Onaylanan Projeler"),
       ),

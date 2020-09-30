@@ -10,7 +10,8 @@ class OnaylanmayanMusteriler extends StatefulWidget {
 }
 
 class _OnaylanmayanMusterilerState extends State<OnaylanmayanMusteriler> {
-  final ServiceOnaylanmayanMusteriler apiManager = ServiceOnaylanmayanMusteriler();
+  final ServiceOnaylanmayanMusteriler apiManager =
+      ServiceOnaylanmayanMusteriler();
   Future<DataModelOnaylanmayanMusteriler> _future;
 
   @override
@@ -23,7 +24,7 @@ class _OnaylanmayanMusterilerState extends State<OnaylanmayanMusteriler> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.tealAccent,
+      backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         title: Text("Onaylanamayan Müşteriler"),
       ),
@@ -34,7 +35,8 @@ class _OnaylanmayanMusterilerState extends State<OnaylanmayanMusteriler> {
   _futureOnaylanmayanMusteri(BuildContext context) {
     return FutureBuilder<DataModelOnaylanmayanMusteriler>(
         future: _future,
-        builder: (context, AsyncSnapshot<DataModelOnaylanmayanMusteriler> snapshot) {
+        builder:
+            (context, AsyncSnapshot<DataModelOnaylanmayanMusteriler> snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
                 itemCount: snapshot.data.data.length,

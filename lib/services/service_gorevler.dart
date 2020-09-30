@@ -31,7 +31,8 @@ class ServiceGorevler {
 
       /// Yukarıdaki metodu kullanmak istemezsen aşağıdakini kullanabilirsin
       /// Bunu kullanırsan ilk satıra import 'dart:convert'; yapmayı unutma
-      final _jsonResponse = DataModelGorevler.fromJson(jsonDecode(response.body));
+      final _jsonResponse =
+          DataModelGorevler.fromJson(jsonDecode(response.body));
       return _jsonResponse;
     } else {
       throw Exception(

@@ -1,4 +1,3 @@
-
 import 'package:Crm_application/model/data_projebazli_gorevler.dart';
 import 'package:Crm_application/services/service_projebazli_gorevler.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +23,7 @@ class _ProjeBazliGorevlerState extends State<ProjeBazliGorevler> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         title: Text("Proje Bazlı Görevler"),
       ),
@@ -34,7 +34,8 @@ class _ProjeBazliGorevlerState extends State<ProjeBazliGorevler> {
   _futureProjeBazliGorevler(BuildContext context) {
     return FutureBuilder<DataModelProjeBazliGorevler>(
         future: _future,
-        builder: (context, AsyncSnapshot<DataModelProjeBazliGorevler> snapshot) {
+        builder:
+            (context, AsyncSnapshot<DataModelProjeBazliGorevler> snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
                 itemCount: snapshot.data.data.length,

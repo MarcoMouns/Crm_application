@@ -23,7 +23,7 @@ class _OnaylananMusteriState extends State<OnaylananMusteri> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.tealAccent,
+      backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         title: Text("Onaylanan Müşteriler"),
       ),

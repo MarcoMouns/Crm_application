@@ -16,8 +16,6 @@ class ServiceGorusmeler{
         return _jsonResponse;
       }else{
       throw Exception("istek durumu başarısız oldu${response.statusCode}");
-
-
     }
   }
 }

@@ -21,6 +21,7 @@ class _HostingSureleriState extends State<HostingSureleri> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         title: Text("Hostin Bitme Süreleri(30 GÜN)"),
       ),

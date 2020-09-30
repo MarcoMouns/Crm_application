@@ -11,7 +11,7 @@ class Gorusmeler extends StatefulWidget {
 
 class _GorusmelerState extends State<Gorusmeler> {
   Future<DataModelGorusmeler> _future;
-   ServiceGorusmeler apiManager = ServiceGorusmeler();
+  ServiceGorusmeler apiManager = ServiceGorusmeler();
 
   @override
   void initState() {
@@ -23,7 +23,7 @@ class _GorusmelerState extends State<Gorusmeler> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         title: Text("Görüşmeler"),
       ),

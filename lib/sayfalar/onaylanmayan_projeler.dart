@@ -24,6 +24,7 @@ class _OnaylanmayanProjelerState extends State<OnaylanmayanProjeler> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         title: Text("Onaylanmayan Projeler"),
       ),
@@ -35,28 +36,28 @@ class _OnaylanmayanProjelerState extends State<OnaylanmayanProjeler> {
     return FutureBuilder<DataModelOnaylanmayanProjeler>(
         future: _future,
         builder:
-        (context, AsyncSnapshot<DataModelOnaylanmayanProjeler> snapshot) {
-      if (snapshot.hasData) {
-        return ListView.builder(
-            itemCount: snapshot.data.data.length,
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              final _data = snapshot.data.data[index];
-              return InkWell(
-                onTap: () {},
-                child: Card(
-                  child: ListTile(
-                      //                      title: Text(_data.),
-                      //                      subtitle: Text(_data.platform),
-                      ),
-                ),
-              );
-            });
-      } else {
-        return Center(
-          child: CircularProgressIndicator(),
-        );
-      }
-    });
+            (context, AsyncSnapshot<DataModelOnaylanmayanProjeler> snapshot) {
+          if (snapshot.hasData) {
+            return ListView.builder(
+                itemCount: snapshot.data.data.length,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  final _data = snapshot.data.data[index];
+                  return InkWell(
+                    onTap: () {},
+                    child: Card(
+                      child: ListTile(
+                          //                      title: Text(_data.),
+                          //                      subtitle: Text(_data.platform),
+                          ),
+                    ),
+                  );
+                });
+          } else {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        });
   }
 }

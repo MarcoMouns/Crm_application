@@ -23,6 +23,7 @@ class _HostinglerState extends State<Hostingler> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         title: Text("Hostingler"),
       ),
@@ -37,11 +38,14 @@ class _HostinglerState extends State<Hostingler> {
           if (snapshot.hasData) {
             return ListView.builder(
                 itemCount: snapshot.data.data.length,
+                scrollDirection: Axis.vertical,
                 itemBuilder: (context, index) {
                   final _data = snapshot.data.data[index];
-                  return ListTile(
-                    title: Text(_data.hostingFirmasi),
-                    subtitle: Text(_data.domainAdi),
+                  return Card(
+                    child: ListTile(
+                      title: Text(_data.domainAdi ?? "null"),
+                      subtitle: Text(_data.bitisTarihi ?? "null"),
+                    ),
                   );
                 });
           } else {

@@ -24,6 +24,7 @@ class _ProjeBazliDemoState extends State<ProjeBazliDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         title: Text("Proje Bazlı Demo"),
       ),
@@ -32,7 +33,8 @@ class _ProjeBazliDemoState extends State<ProjeBazliDemo> {
   }
 
   _futureProjeBazliDemo(BuildContext context) {
-    return FutureBuilder<DataModelProjeBazliDemoLinkleri>(future: _future,
+    return FutureBuilder<DataModelProjeBazliDemoLinkleri>(
+        future: _future,
         builder: (context, AsyncSnapshot<DataModelProjeBazliDemoLinkleri> snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(

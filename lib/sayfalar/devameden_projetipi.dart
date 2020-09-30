@@ -23,6 +23,7 @@ class _DevamedenProjetipiState extends State<DevamedenProjetipi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         title: Text("Devam Eden Proje Tipi"),
       ),

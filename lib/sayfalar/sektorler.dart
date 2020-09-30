@@ -20,25 +20,21 @@ class _SektorlerState extends State<Sektorler> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.lightBlueAccent,
         appBar: AppBar(
           title: Text("Sektorler"),
         ),
-        body:
-
-
-        FutureBuilder(
+        body: FutureBuilder(
           future: futureSektorler,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(
-
                   itemCount: snapshot.data.length,
                   itemBuilder: (context, index) {
                     return Card(
                       child: ListTile(
                         title: Text(snapshot.data[index].name),
-                        subtitle:Text( snapshot.data[index].id),
-
+                        subtitle: Text(snapshot.data[index].id),
                       ),
                     );
                   });

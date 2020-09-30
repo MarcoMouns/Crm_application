@@ -19,7 +19,7 @@ class _GoverlerState extends State<Gorevler> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.tealAccent,
+      backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         backgroundColor: Colors.cyan,
         title: Text("Görevler"),
@@ -32,16 +32,15 @@ class _GoverlerState extends State<Gorevler> {
     ///ne zaman biteceği belli olmayan yapılarda arayüzü yapıp sonrasında veri gelince bu arayüzü kullanmak için futurebuilder kullanıyoruz
     return FutureBuilder<DataModelGorevler>(
       future: _future,
-      builder: (BuildContext context, AsyncSnapshot<DataModelGorevler> snapshot) {
+      builder:
+          (BuildContext context, AsyncSnapshot<DataModelGorevler> snapshot) {
         ///snapshot = o an gelen değer
         /// Gets adlı modelin içindeki data ile snapshot içindeki data karışmasın
         /// diye [_data] isimli değişken oluşturduk.
 
         if (snapshot.hasData) {
           return GestureDetector(
-            onTap: () {
-
-            },
+            onTap: () {},
             child: ListView.builder(
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
